@@ -78,13 +78,13 @@
     slash "^3.0.0"
 
 "@adonisjs/config@^3.0.8":
-  version "3.0.8"
-  resolved "https://registry.yarnpkg.com/@adonisjs/config/-/config-3.0.8.tgz#5716138b35c88a67a915c1717d31e84f0690c21c"
-  integrity sha512-rquKb2GVmrITfkdwbmFoTIWJRCsgci8g/FJOz3iG35AB6/dW2ksSa6TSRH+zC4fKb3MO/rkS2guUpxKTvG7wHA==
+  version "3.0.9"
+  resolved "https://registry.yarnpkg.com/@adonisjs/config/-/config-3.0.9.tgz#125742fc99624841950092f07173fc9e61549e38"
+  integrity sha512-f+wzrc+0HLvhJyYGEMV2QTHtyJ8sI3PKvH9h/baW/iF8UO3KF+llHH0Cf3/M5dYnpdz9rnmj0VtdTaIDfxrgGg==
   dependencies:
-    "@poppinss/utils" "^4.0.2"
+    "@poppinss/utils" "^5.0.0"
 
-"@adonisjs/core@^5.8.0":
+"@adonisjs/core@^5.8.8":
   version "5.8.8"
   resolved "https://registry.yarnpkg.com/@adonisjs/core/-/core-5.8.8.tgz#2bc3d377310363c9c63cf996ae02c3760eab4823"
   integrity sha512-A+sN7QmMdMXYluh4iYgK+3qyYN8eOE1TjuKEJeOMpCIXf3rA/t2ilB57oHpyxJz359u946tKKsoDB82KTqGIRQ==
