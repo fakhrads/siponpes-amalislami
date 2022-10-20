@@ -8,7 +8,7 @@ export default class extends BaseSchema {
       table.increments('id').primary()
       table.string('email', 255).notNullable().unique()
       table.string('password', 180).notNullable()
-      table.enum('level',['admin','karyawan']).notNullable().defaultTo('pegawai')
+      table.enum('level',['admin','karyawan']).notNullable().defaultTo('karyawan')
       table.string('remember_me_token').nullable()
 
       /**
