@@ -17,9 +17,5 @@
 | import './routes/customer''
 |
 */
+import '../app/Controllers/Http/main'
 
-import Route from '@ioc:Adonis/Core/Route'
-
-Route.get('/', async ({ view }) => {
-  return view.render('welcome')
-})
