@@ -17,5 +17,5 @@
 | import './routes/customer''
 |
 */
-import '../app/Controllers/Http/main'
+import './routes/main'
 
