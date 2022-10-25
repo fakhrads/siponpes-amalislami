@@ -2,7 +2,7 @@ import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
 export default class AdminsController {
   public async index({ view }: HttpContextContract) {
-    return view.render('pages/admin/home')
+    return view.render('admin/home')
   }
 
   public async create({}: HttpContextContract) {}
