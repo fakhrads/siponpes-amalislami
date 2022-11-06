@@ -6,6 +6,9 @@ export default class Teacher extends BaseModel {
   public id: number
 
   @column()
+  public nip: string
+
+  @column()
   public nama_depan: string
 
   @column()
