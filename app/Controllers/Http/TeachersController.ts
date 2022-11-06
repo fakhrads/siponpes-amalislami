@@ -1,4 +1,4 @@
-import { Exception } from '@adonisjs/core/build/standalone'
+
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Teacher from 'App/Models/Teacher'
 export default class TeachersController {
@@ -17,7 +17,7 @@ export default class TeachersController {
     const tempat_lahir = request.input('tempat_lahir')
     const tanggal_lahir = request.input('tanggal_lahir')
     try {
-      const teachers = await Teacher.create({
+      await Teacher.create({
         nip: nip,
         nama_depan: nama_depan,
         nama_belakang: nama_belakang,

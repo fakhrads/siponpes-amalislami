@@ -1,5 +1,7 @@
+
 {
   "typescript": true,
+  
   "commands": [
     "./commands",
     "@adonisjs/core/build/commands/index.js",
@@ -29,6 +31,10 @@
   "metaFiles": [
     {
       "pattern": "public/**",
+      "reloadServer": false
+    },
+    {
+      "pattern": "public/assets/extensions**",
       "reloadServer": false
     },
     {
