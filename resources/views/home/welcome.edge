@@ -1,17 +1,13 @@
-@layout('home/layout/base')
-
-@set('title','Amal Islami Dashboard')
-@set('pageHeader','Data Guru Yayasan')
-
-@section('custom-css')
-
-@end
-
-@section('content')
-
-@end
-
-@section('custom-js')
-<script src="https://unpkg.com/@material-tailwind/html@latest/scripts/collapse.js"></script>
-
-@end
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>React App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    @entryPointScripts('app')
+  </body>
+</html>

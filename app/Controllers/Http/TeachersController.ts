@@ -40,7 +40,7 @@ export default class TeachersController {
       return view.render('admin/pages/teachers_edit', { data: teachers })
     } catch(e) {
       return response.json(e)
-      //session.flash('errors', e)
+      session.flash('errors', e)
       //return response.redirect().back()
     }
   }

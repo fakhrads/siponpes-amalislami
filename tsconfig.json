@@ -8,6 +8,8 @@
     "build"
   ],
   "compilerOptions": {
+    "lib": ["es5", "es6", "dom"],
+    "jsx": "react",
     "outDir": "build",
     "rootDir": "./",
     "sourceMap": true,
