@@ -18,4 +18,5 @@
 |
 */
 import './routes/main'
+import './routes/website'
 

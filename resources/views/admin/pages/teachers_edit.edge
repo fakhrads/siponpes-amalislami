@@ -1,0 +1,75 @@
+@layout('layout/base')
+
+@set('title','Amal Islami Dashboard')
+@set('pageHeader','Edit Data Guru')
+
+@section('custom-css')
+
+@end
+
+@section('content')
+<section id="multiple-column-form">
+    <div class="row match-height">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-content">
+            <div class="card-body">
+              <form class="form" method="POST" action="{{ route('admin_teachers_store') }}">
+                <div class="row">
+                  <div class="col-md-6 col-12">
+                    <div class="form-group">
+                      <label for="first-name-column">NIP</label>
+                      <input type="text" id="first-name-column" class="form-control" value="{{ data.nip }}" name="nip">
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-12">
+                    <div class="form-group">
+                      <label for="last-name-column">Nama Depan</label>
+                      <input type="text" id="last-name-column" class="form-control" value="{{ data.nama_depan }}" name="nama_depan">
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-12">
+                    <div class="form-group">
+                      <label for="city-column">Nama Belakang</label>
+                      <input type="text" id="city-column" class="form-control" value="{{ data.nama_belakang }}" name="nama_belakang">
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-12">
+                    <div class="form-group">
+                      <label for="country-floating">Tempat Lahir</label>
+                      <input type="text" id="country-floating" class="form-control" name="tempat_lahir" value="{{ data.tempat_lahir }}">
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-12">
+                    <div class="form-group">
+                      <label for="company-column">Tanggal Lahir</label>
+                      <input type="date" id="company-column" class="form-control" name="tanggal_lahir" value="{{ data.tanggal_lahir }}">
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-12">
+                    <div class="form-group">
+                      <label for="email-id-column">Email</label>
+                      <input type="email" id="email-id-column" class="form-control" name="email" placeholder="email (testing)" readonly>
+                    </div>
+                  </div>
+                  <div class="col-12 d-flex justify-content-end">
+                    <button type="submit" class="btn btn-primary me-1 mb-1">
+                      Submit
+                    </button>
+                    <button type="reset" class="btn btn-light-secondary me-1 mb-1">
+                      Reset
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+@end
+
+@section('custom-js')
+
+@end
