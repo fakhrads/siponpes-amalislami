@@ -1,11 +1,28 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import Blog from 'App/Models/Blog'
 
 export default class BlogsController {
-  public async index({}: HttpContextContract) {}
+  public async index({ view }: HttpContextContract) {
+    return view.render('admin/pages/blog')
+  }
 
-  public async create({}: HttpContextContract) {}
+  public async create({ view }: HttpContextContract) {
+    return view.render('admin/page/blog_new')
+  }
 
-  public async store({}: HttpContextContract) {}
+  public async store({ request, session, view }: HttpContextContract) {
+    const title = request.input('title')
+    const content = request.input('content')
+    try {
+      await Blog.create({
+        title: title,
+        content: content,
+      })
+    } catch(e) {
+      session.flash('errors', e)
+      return view.render('errors/server-error')
+    }
+  }
 
   public async show({}: HttpContextContract) {}
 
