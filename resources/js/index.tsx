@@ -1,8 +1,8 @@
 import React from "react";
 import { createRoot } from 'react-dom/client';
-
+import App from "./App";
+import '../css/app.css'
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
-import HomePages from "./pages/HomePages";
 
 const colors = {
   brand: {
@@ -29,6 +29,6 @@ const container = document.getElementById("root");
 const root = createRoot(container);  // createRoot(container!) if you use TypeScript
 root.render(
   <ChakraProvider theme={theme}>
-    <HomePages />
+    <App/>
   </ChakraProvider>
-  );
+);

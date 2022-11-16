@@ -1,16 +1,18 @@
 import * as React from 'react'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Blog from './pages/BlogPage';
+import Layout from "./pages/components/Layout";
+import HomePages from "./pages/HomePage";
 
-// 1. import `ChakraProvider` component
-import { ChakraProvider } from '@chakra-ui/react'
-import HomePages from './pages/HomePages'
-
-function App() {
-  // 2. Wrap ChakraProvider at the root of your app
+export default function App() {
   return (
-    <ChakraProvider>
-      <HomePages />
-    </ChakraProvider>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePages/>} />
+          <Route path='blogs' element={<Blog/>} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
-
-export default App()
