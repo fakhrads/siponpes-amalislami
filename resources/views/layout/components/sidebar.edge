@@ -22,17 +22,44 @@
             @end
             <a href="#" class='sidebar-link'>
                 <i class="bi bi-stack"></i>
-                <span>Data Guru</span>
+                <span>Data Utama</span>
             </a>
             <ul class="submenu ">
                 <li 
-                    @if( request.url() == '/shop') 
+                    @if( request.url() == '/admin/teachers') 
                         class="submenu-item active">
                     @else 
                         class="submenu-item">
                     @end
                     
-                    <a href="/shop">Lihat Data</a>
+                    <a href="/admin/teachers">Data Guru</a>
+                </li>
+                <li 
+                    @if( request.url() == '/admin/blog/category') 
+                        class="submenu-item active">
+                    @else 
+                        class="submenu-item">
+                    @end
+                    
+                    <a href="/admin/blog/category">Data Kategori Blog</a>
+                </li>
+                <li 
+                    @if( request.url() == '/admin/blog') 
+                        class="submenu-item active">
+                    @else 
+                        class="submenu-item">
+                    @end
+                    
+                    <a href="/admin/blog">Data Blog</a>
+                </li>
+                <li 
+                    @if( request.url() == '/admin/blog') 
+                        class="submenu-item active">
+                    @else 
+                        class="submenu-item">
+                    @end
+                    
+                    <a href="/admin/blog">Data Siswa Berprestasi</a>
                 </li>
             </ul>
         </li>
