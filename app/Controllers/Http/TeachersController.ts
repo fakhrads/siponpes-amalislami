@@ -39,9 +39,9 @@ export default class TeachersController {
       const teachers = await Teacher.query().where('nip',nip).firstOrFail()
       return view.render('admin/pages/teachers_edit', { data: teachers })
     } catch(e) {
-      return response.json(e)
       session.flash('errors', e)
-      //return response.redirect().back()
+      //return response.json(e)
+      return response.redirect().back()
     }
   }
 
