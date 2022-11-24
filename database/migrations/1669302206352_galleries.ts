@@ -13,7 +13,8 @@ export default class extends BaseSchema {
         .onDelete('CASCADE') 
       table.string('name').notNullable()
       table.string('description').notNullable()
-      table.string('photo_path').notNullable()
+      table.string('path').notNullable()
+      table.enu('path',['photo','video']).defaultTo('photo')
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
        */
