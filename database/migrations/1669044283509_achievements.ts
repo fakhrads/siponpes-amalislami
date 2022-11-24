@@ -14,6 +14,7 @@ export default class extends BaseSchema {
       table.string('title')
       table.string('description')
       table.string('photo_path')
+      table.enu('from',['MA','MTS','SMK'])
 
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL

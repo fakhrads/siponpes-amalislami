@@ -6,6 +6,7 @@ export default class extends BaseSchema {
   public async up() {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id').primary()
+      table.string('name')
       table.string('email',200).notNullable().unique()
       table.string('password', 180).notNullable()
       table.enum('level',['admin','karyawan']).defaultTo('karyawan')
