@@ -1,6 +1,4 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-import Hash from '@ioc:Adonis/Core/Hash'
-import User from 'App/Models/User'
 export default class UsersController {
   public async index({ view }: HttpContextContract) {
     return view.render('admin/pages/auth/login')
@@ -15,26 +13,16 @@ export default class UsersController {
     response.redirect('/login')
   }
 
-  public async login({ auth, request, response }: HttpContextContract) {
+  public async login({ auth, request, response, session }: HttpContextContract) {
     const email = request.input('email')
     const password = request.input('password')
-    
-
-    try {// Lookup user manually
-      const user = await User
-        .query()
-        .where('email',email)
-        .firstOrFail()
-
-      
-      // Verify password
-      if (!(await Hash.verify(user.password, password))) {
-        return response.badRequest('Invalid credentials')
-      }
-      // Create session
-      await auth.use('web').login(user)
-    } catch (e) {
-      return response.badRequest("Gagal")
+  
+    try {
+      await auth.use('web').attempt(email, password)
+      response.redirect('/admin/dashboard')
+    } catch(e) {
+      session.flash('error', e.message)
+      return response.redirect().back()
     }
 
   }
