@@ -10,6 +10,7 @@ Route
     Route.get('/teachers/new', 'TeachersController.create').as('admin_teachers_new').middleware('auth')
     Route.post('/teachers/store', 'TeachersController.store').as('admin_teachers_store').middleware('auth')
     Route.get('/teachers/edit/:nip', 'TeachersController.edit').as('admin_teachers_edit').middleware('auth')
+    Route.get('/blog/category/', 'BlogCategoriesController.index').as('admin_blog_category').middleware('auth')
     Route.post('/blog/category/new', 'BlogCategoriesController.store').as('admin_blog_category_store').middleware('auth')
     Route.get('/blog/category/new', 'BlogCategoriesController.create').as('admin_blog_category_create').middleware('auth')
     Route.get('/blog/category/edit/:category_id', 'BlogCategoriesController.edit').as('admin_blog_category_edit').middleware('auth')

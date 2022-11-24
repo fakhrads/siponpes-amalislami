@@ -24,6 +24,9 @@ export default class User extends BaseModel {
   public galleries: HasMany<typeof Gallery>
 
   @column()
+  public name: string
+
+  @column()
   public email: string
 
   @column({ serializeAs: null })
