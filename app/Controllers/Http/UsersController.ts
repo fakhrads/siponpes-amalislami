@@ -2,7 +2,9 @@ import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Hash from '@ioc:Adonis/Core/Hash'
 import User from 'App/Models/User'
 export default class UsersController {
-  public async index({}: HttpContextContract) {}
+  public async index({ view }: HttpContextContract) {
+    return view.render('admin/pages/auth/login')
+  }
 
   public async create({}: HttpContextContract) {}
 
@@ -16,20 +18,25 @@ export default class UsersController {
   public async login({ auth, request, response }: HttpContextContract) {
     const email = request.input('email')
     const password = request.input('password')
+    
 
-    // Lookup user manually
-    const user = await User
-      .query()
-      .where('email',email)
-      .firstOrFail()
+    try {// Lookup user manually
+      const user = await User
+        .query()
+        .where('email',email)
+        .firstOrFail()
 
-    // Verify password
-    if (!(await Hash.verify(user.password, password))) {
-      return response.badRequest('Invalid credentials')
+      
+      // Verify password
+      if (!(await Hash.verify(user.password, password))) {
+        return response.badRequest('Invalid credentials')
+      }
+      // Create session
+      await auth.use('web').login(user)
+    } catch (e) {
+      return response.badRequest("Gagal")
     }
 
-    // Create session
-    await auth.use('web').login(user)
   }
 
   public async edit({}: HttpContextContract) {}

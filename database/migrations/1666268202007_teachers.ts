@@ -6,6 +6,11 @@ export default class extends BaseSchema {
   public async up () {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
+      table
+        .integer('users_id')
+        .unsigned()
+        .references('users.id')
+        .onDelete('CASCADE') 
       table.string('nip',50).notNullable()
       table.string('nama_depan',100).notNullable()
       table.string('nama_belakang',100).notNullable()

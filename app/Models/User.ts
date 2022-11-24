@@ -1,10 +1,27 @@
 import { DateTime } from 'luxon'
 import Hash from '@ioc:Adonis/Core/Hash'
-import { column, beforeSave, BaseModel } from '@ioc:Adonis/Lucid/Orm'
-
+import { 
+  column, 
+  beforeSave, 
+  BaseModel,
+  hasMany,
+  HasMany 
+} from '@ioc:Adonis/Lucid/Orm'
+import Blog from 'App/Models/Blog'
+import Achievement from 'App/Models/Achievement'
+import Gallery from 'App/Models/Gallery'
 export default class User extends BaseModel {
   @column({ isPrimary: true })
   public id: number
+
+  @hasMany(() => Achievement)
+  public achievements: HasMany<typeof Achievement>
+
+  @hasMany(() => Blog)
+  public blogs: HasMany<typeof Blog>
+
+  @hasMany(() => Gallery)
+  public galleries: HasMany<typeof Gallery>
 
   @column()
   public email: string
