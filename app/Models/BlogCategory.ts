@@ -13,6 +13,9 @@ export default class BlogCategory extends BaseModel {
   @hasMany(() => Blog)
   public blogs: HasMany<typeof Blog>
 
+  @column()
+  public category_name: string
+
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime
 
