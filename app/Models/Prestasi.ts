@@ -1,12 +1,12 @@
 import { DateTime } from 'luxon'
 import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
 
-export default class Gallery extends BaseModel {
+export default class Prestasi extends BaseModel {
   @column({ isPrimary: true })
   public id: number
 
   @column()
-  public nama_kegiatan: string
+  public judul: string
 
   @column()
   public deskripsi: string

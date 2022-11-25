@@ -6,7 +6,7 @@ export default class Blog extends BaseModel {
   public id: number
 
   @column()
-  public title: string
+  public judul: string
 
   @column()
   public content: string

@@ -1,18 +1,16 @@
 import { DateTime } from 'luxon'
-import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, column, hasMany, HasMany } from '@ioc:Adonis/Lucid/Orm'
+import Karyawan from './Karyawan'
 
-export default class Achievement extends BaseModel {
+export default class Jabatan extends BaseModel {
   @column({ isPrimary: true })
   public id: number
 
-  @column()
-  public title: string
+  @hasMany(() => Karyawan)
+  public karyawans: HasMany<typeof Karyawan>
 
   @column()
-  public description: string
-
-  @column()
-  public photo_path: string
+  public nama_jabatan: string
 
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime

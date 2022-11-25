@@ -8,14 +8,14 @@ import {
   HasMany 
 } from '@ioc:Adonis/Lucid/Orm'
 import Blog from 'App/Models/Blog'
-import Achievement from 'App/Models/Achievement'
+import Prestasi from 'App/Models/Prestasi'
 import Gallery from 'App/Models/Gallery'
 export default class User extends BaseModel {
   @column({ isPrimary: true })
   public id: number
 
-  @hasMany(() => Achievement)
-  public achievements: HasMany<typeof Achievement>
+  @hasMany(() => Prestasi)
+  public achievements: HasMany<typeof Prestasi>
 
   @hasMany(() => Blog)
   public blogs: HasMany<typeof Blog>
@@ -24,7 +24,7 @@ export default class User extends BaseModel {
   public galleries: HasMany<typeof Gallery>
 
   @column()
-  public name: string
+  public nama: string
 
   @column()
   public email: string

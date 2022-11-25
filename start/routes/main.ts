@@ -14,6 +14,7 @@ Route
     Route.post('/blog/category/new', 'BlogCategoriesController.store').as('admin_blog_category_store').middleware('auth')
     Route.get('/blog/category/new', 'BlogCategoriesController.create').as('admin_blog_category_create').middleware('auth')
     Route.get('/blog/category/edit/:category_id', 'BlogCategoriesController.edit').as('admin_blog_category_edit').middleware('auth')
+    Route.get('/subjects', 'SubjectsController.index').as('admin_subjects').middleware('auth')
   })
   .prefix('/admin')
 //Route.get('/','DashboardController.index')

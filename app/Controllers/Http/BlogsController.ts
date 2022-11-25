@@ -15,7 +15,7 @@ export default class BlogsController {
     const content = request.input('content')
     try {
       await Blog.create({
-        title: title,
+        judul: title,
         content: content,
       })
     } catch(e) {
