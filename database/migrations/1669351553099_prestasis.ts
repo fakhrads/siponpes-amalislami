@@ -1,7 +1,7 @@
 import BaseSchema from '@ioc:Adonis/Lucid/Schema'
 
 export default class extends BaseSchema {
-  protected tableName = 'galleries'
+  protected tableName = 'prestasis'
 
   public async up () {
     this.schema.createTable(this.tableName, (table) => {
@@ -11,9 +11,14 @@ export default class extends BaseSchema {
         .unsigned()
         .references('users.id')
         .onDelete('CASCADE') 
-      table.string('nama_kegiatan').notNullable()
-      table.string('deskripsi').notNullable()
-      table.string('photo_path').notNullable()
+      table.string('title')
+      table.string('description')
+      table.string('photo_path')
+      table.enu('from',['MA','MTS','SMK'])
+
+      /**
+       * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
+       */
       table.timestamp('created_at', { useTz: true })
       table.timestamp('updated_at', { useTz: true })
     })

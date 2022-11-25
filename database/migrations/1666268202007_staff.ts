@@ -1,7 +1,7 @@
 import BaseSchema from '@ioc:Adonis/Lucid/Schema'
 
 export default class extends BaseSchema {
-  protected tableName = 'teachers'
+  protected tableName = 'karyawan'
 
   public async up () {
     this.schema.createTable(this.tableName, (table) => {
@@ -11,17 +11,24 @@ export default class extends BaseSchema {
         .unsigned()
         .references('users.id')
         .onDelete('CASCADE') 
-      table.string('nip',50).notNullable()
+      table
+        .integer('jabatan_id')
+        .unsigned()
+        .references('jabatan.id')
+        .onDelete('CASCADE') 
+      table
+        .integer('mata_pelajaran_id')
+        .unsigned()
+        .references('mata_pelajaran.id')
+        .onDelete('CASCADE') 
       table.string('nama_depan',100).notNullable()
       table.string('nama_belakang',100).notNullable()
-      table.string('tempat_lahir',50).notNullable()
-      table.string('tanggal_lahir').notNullable()
-
+      table.string('jenis_kelamin',50).notNullable()
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
        */
-      table.timestamp('created_at', { useTz: true }).defaultTo(this.now())
-      table.timestamp('updated_at', { useTz: true }).defaultTo(this.now())
+      table.timestamp('created_at', { useTz: true })
+      table.timestamp('updated_at', { useTz: true })
     })
   }
 
