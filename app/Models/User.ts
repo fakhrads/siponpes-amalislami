@@ -10,12 +10,16 @@ import {
 import Blog from 'App/Models/Blog'
 import Prestasi from 'App/Models/Prestasi'
 import Gallery from 'App/Models/Gallery'
+import Event from './Event'
 export default class User extends BaseModel {
   @column({ isPrimary: true })
   public id: number
 
   @hasMany(() => Prestasi)
   public achievements: HasMany<typeof Prestasi>
+
+  @hasMany(() => Event)
+  public event: HasMany<typeof Event>
 
   @hasMany(() => Blog)
   public blogs: HasMany<typeof Blog>

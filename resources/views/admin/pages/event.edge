@@ -1,0 +1,67 @@
+@layout('layout/base')
+
+@set('title','Amal Islami Dashboard')
+@set('pageHeader','Data Event')
+
+@section('custom-css')
+    <link
+      rel="stylesheet"
+      href="/asset/extensions/simple-datatables/style.css"
+    />
+    <link rel="stylesheet" href="/asset/css/pages/simple-datatables.css" />
+@end
+
+@section('content')
+  <section class="section">
+    <div class="py">
+        <a href="/admin/subjects/new" class="btn btn-primary">Tambah Data</a>
+    </div>
+    <br/>
+    <div class="card">
+      <!-- <div class="card-header">Data Guru Yayasan</div> -->
+      <div class="card-body">
+        <table class="table table-striped" id="table1">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Judul Event</th>
+              <th>Tanggal Mulai</th>
+              <th>Tanggal Selesai</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            @each(k in data)
+            <tr>
+              <td>{{ k.id }}</td>
+              <td>{{ k.judul }}</td>
+              <td>{{ k.tanggal_mulai }}</td>
+              <td>{{ k.tanggal_selesai }}</td>
+              <td>
+                <div class="row">
+                  <div>                 
+                    <a href="/admin/event/{{ k.id }}"class="btn btn-sm btn-info">Edit</a>
+                  </div>
+                  <br>
+                  <div>                 
+                    <form method="POST" action="admin_subjects_delete">
+                      <input type="hidden" name="id" value="{{ k.id }}">
+                      <button class="btn btn-sm btn-danger" type="submit">Hapus</button>
+                    </form>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            @end
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+@end
+
+@section('custom-js')
+
+    <script src="/asset/extensions/simple-datatables/umd/simple-datatables.js"></script>
+    <script src="/asset/js/pages/simple-datatables.js"></script>
+@end
