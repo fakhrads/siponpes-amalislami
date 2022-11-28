@@ -71,11 +71,7 @@ const Carousel = () => {
   return(
     <Flex
       w="full"
-      bg="#edf3f8"
-      _dark={{ bg: "#3e3e3e" }}
-      py={10}
-      alignItems="center"
-      justifyContent="center"
+      py={20}
     >
       <Flex w="full" pos="relative" overflow={"hidden"}>
         <Flex h="400px" w="full" {...carouselStyle}>

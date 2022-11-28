@@ -13,7 +13,6 @@ import {
   VStack,
   IconButton,
   CloseButton,
-  Container,
 } from "@chakra-ui/react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { Logo } from "@choc-ui/logo";
@@ -32,7 +31,7 @@ const Layout = () => {
           w="full"
           position="fixed"
           px={{ base: 2, sm: 4 }}
-          py={4}
+          py={5}
           zIndex={100} 
           shadow="md"
         >
@@ -113,10 +112,8 @@ const Layout = () => {
             </HStack>
           </Flex>
         </chakra.header>
-        <Container >
           <Outlet />
 
-        </Container>
       </React.Fragment>
     </>
   )
