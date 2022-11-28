@@ -45,14 +45,17 @@
             <div id="main">
                 <header class="mb-3">
                     <a href="#" class="burger-btn d-block d-xl-none">
-                        <i class="bi bi-justify fs-3"></i>
+                        <i class="bi bi-justify fs-3">asdasd</i>
                     </a>
                 </header>
+
                 <div class="page-heading">
                     <h3>{{ pageHeader }}</h3>
+                    <br>
+                    <div class="page-content">
+                        @!section('content')
+                    </div>
                 </div>
-                
-                @!section('content')
                 <footer>
                     <div class="footer clearfix mb-0 text-muted">
                         <div class="float-start">

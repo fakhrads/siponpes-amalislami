@@ -1,7 +1,7 @@
 @layout('layout/base')
 
 @set('title','Amal Islami Dashboard')
-@set('pageHeader','Data Mata Pelajaran')
+@set('pageHeader','Data Jabatan Karyawan')
 
 @section('custom-css')
     <link
@@ -24,7 +24,7 @@
           <thead>
             <tr>
               <th>ID</th>
-              <th>Nama Pelajaran</th>
+              <th>Nama Jabatan</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -32,11 +32,11 @@
             @each(k in data)
             <tr>
               <td>{{ k.id }}</td>
-              <td>{{ k.nama_pelajaran }}</td>
+              <td>{{ k.nama_jabatan }}</td>
               <td>
                 <div class="row">
                   <div>                 
-                    <a href="/admin/subjects/{{ k.id }}"class="btn btn-sm btn-info">Edit</a>
+                    <a href="/admin/position/{{ k.id }}"class="btn btn-sm btn-info">Edit</a>
                   </div>
                   <br>
                   <div>                 
