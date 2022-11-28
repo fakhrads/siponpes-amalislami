@@ -6,6 +6,12 @@ export default class Karyawan extends BaseModel {
   public id: number
 
   @column()
+  public jabatan_id: number
+
+  @column()
+  public mata_pelajaran_id: number
+
+  @column()
   public nama_depan: string
 
   @column()
