@@ -24,6 +24,7 @@ export default class extends BaseSchema {
       table.string('nama_depan',100).notNullable()
       table.string('nama_belakang',100).notNullable()
       table.string('jenis_kelamin',50).notNullable()
+      table.string('photo_path',255).notNullable()
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
        */
