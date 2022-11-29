@@ -19,7 +19,7 @@ export default class extends BaseSchema {
       table
         .integer('mata_pelajaran_id')
         .unsigned()
-        .references('mata_pelajaran.id')
+        .references('mata_pelajarans.id')
         .onDelete('CASCADE') 
       table.string('nama_depan',100).notNullable()
       table.string('nama_belakang',100).notNullable()
