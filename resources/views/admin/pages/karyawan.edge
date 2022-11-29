@@ -1,0 +1,69 @@
+@layout('layout/base')
+
+@set('title','Amal Islami Dashboard')
+@set('pageHeader','Data Tenaga Kerja Yayasan')
+
+@section('custom-css')
+    <link
+      rel="stylesheet"
+      href="/asset/extensions/simple-datatables/style.css"
+    />
+    <link rel="stylesheet" href="/asset/css/pages/simple-datatables.css" />
+@end
+
+@section('content')
+  <section class="section">
+    <div class="py">
+        <a href="/admin/karyawan/new" class="btn btn-primary">Tambah Data</a>
+    </div>
+    <br/>
+    <div class="card">
+      <!-- <div class="card-header">Data Guru Yayasan</div> -->
+      <div class="card-body">
+        <table class="table table-striped" id="table1">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nama</th>
+              <th>Jenis Kelamin</th>
+              <th>Mata Pelajaran</th>
+              <th>Nama Jabatan</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            @each(k in data)
+            <tr>
+              <td>{{ k.id }}</td>
+              <td>{{ k.nama_depan }} {{ k.nama_belakang }}</td>
+              <td>{{ k.jenis_kelamin }}</td>
+              <td>{{ k.nama_pelajaran }}</td>
+              <td>{{ k.nama_jabatan }}</td>
+              <td>
+                <div class="row">
+                  <div>                 
+                    <a href="/admin/position/{{ k.id }}"class="btn btn-sm btn-info">Edit</a>
+                  </div>
+                  <br>
+                  <div>                 
+                    <form method="POST" action="admin_subjects_delete">
+                      <input type="hidden" name="id" value="{{ k.id }}">
+                      <button class="btn btn-sm btn-danger" type="submit">Hapus</button>
+                    </form>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            @end
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+@end
+
+@section('custom-js')
+
+    <script src="/asset/extensions/simple-datatables/umd/simple-datatables.js"></script>
+    <script src="/asset/js/pages/simple-datatables.js"></script>
+@end
