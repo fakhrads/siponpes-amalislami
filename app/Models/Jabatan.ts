@@ -3,6 +3,11 @@ import { BaseModel, column, hasMany, HasMany } from '@ioc:Adonis/Lucid/Orm'
 import Karyawan from './Karyawan'
 
 export default class Jabatan extends BaseModel {
+  
+  static get table () {
+    return 'jabatan'
+  }
+
   @column({ isPrimary: true })
   public id: number
 
