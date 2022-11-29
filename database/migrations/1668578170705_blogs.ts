@@ -16,6 +16,7 @@ export default class extends BaseSchema {
         .unsigned()
         .references('users.id')
         .onDelete('CASCADE') 
+      table.string('photo_path').nullable()
       table.string('judul')
       table.string('content')
 
