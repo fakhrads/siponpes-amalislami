@@ -4,7 +4,7 @@ import Jabatan from 'App/Models/Jabatan'
 export default class PositionsController {
   public async index({ view }: HttpContextContract) {
     const data = await Jabatan.all()
-    return view.render('admin/pages/', {data: data})
+    return view.render('admin/pages/position', {data: data})
   }
 
   public async create({ view }: HttpContextContract) {

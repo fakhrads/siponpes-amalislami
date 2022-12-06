@@ -44,7 +44,7 @@ Encore.setPublicPath('/assets')
 | entrypoints.
 |
 */
-Encore.addEntry('app', './resources/js/index.tsx')
+Encore.addEntry('app', './resources/css/app.css')
 
 /*
 |--------------------------------------------------------------------------
@@ -126,8 +126,8 @@ Encore.enableVersioning(Encore.isProduction())
 | to watch them explicitly and livereload the browser.
 |
 */
-Encore.enableReactPreset()
-Encore.enableTypeScriptLoader()
+// Encore.enableReactPreset()
+// Encore.enableTypeScriptLoader()
 Encore.configureDevServerOptions((options) => {
   /**
    * Normalize "options.static" property to an array
