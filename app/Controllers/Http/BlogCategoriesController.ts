@@ -3,7 +3,8 @@ import BlogCategory from 'App/Models/BlogCategory'
 
 export default class BlogCategoriesController {
   public async index({ view }: HttpContextContract) {
-    return view.render('admin/pages/blog_category')
+    const data = await BlogCategory.all()
+    return view.render('admin/pages/blog_category', {data: data})
   }
 
   public async create({ view }: HttpContextContract) {

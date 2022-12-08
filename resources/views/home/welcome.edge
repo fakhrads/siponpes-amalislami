@@ -8,63 +8,165 @@
 
 @section('content')
 
-    <!-- This is an example component -->
-    <div class="mx-auto z-30"
-    	<div id="default-carousel" class="relative" data-carousel="static">
-            <!-- Carousel wrapper -->
-            <div class="overflow-hidden relative h-64 rounded-lg sm:h-80 xl:h-96 2xl:h-full">
-                <!-- Item 1 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <span class="absolute top-1/2 left-1/2 text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 sm:text-3xl dark:text-gray-800">First Slide</span>
-                    <img src="https://flowbite.com/docs/images/carousel/carousel-1.svg" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
-                </div>
-                <!-- Item 2 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="https://flowbite.com/docs/images/carousel/carousel-2.svg" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
-                </div>
-                <!-- Item 3 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="https://flowbite.com/docs/images/carousel/carousel-3.svg" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
-                </div>
-            </div>
-            <!-- Slider indicators -->
-            <div class="flex absolute bottom-5 left-1/2 z-20 space-x-3 -translate-x-1/2">
-                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-            </div>
-            <!-- Slider controls -->
-            <button type="button" class="flex absolute top-0 left-0 z-20 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-prev>
-                <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                    <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-                    <span class="hidden">Previous</span>
-                </span>
-            </button>
-            <button type="button" class="flex absolute top-0 right-0 z-20 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-next>
-                <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                    <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                    <span class="hidden">Next</span>
-                </span>
-            </button>
+    <div id="carouselExampleCaptions" class="carousel slide relative p-4 " data-bs-ride="carousel">
+      <div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner relative w-full overflow-hidden">
+        <div class="carousel-item active relative float-left w-full">
+          <img
+            src="https://mdbootstrap.com/img/Photos/Slides/img%20(15).jpg"
+            class="block w-full rounded-lg"
+            alt="..."
+          />
+          <div class="carousel-caption md:block absolute text-right top-48">
+            <h5 class="text-4xl">First slide label</h5>
+            <p>Some representative placeholder content for the first slide.</p>
+          </div>
         </div>
-
-
+        <div class="carousel-item relative float-left w-full">
+          <img
+            src="https://mdbootstrap.com/img/Photos/Slides/img%20(22).jpg"
+            class="block w-full rounded-lg"
+            alt="..."
+          />
+          <div class="carousel-caption hidden md:block absolute text-center">
+            <h5 class="text-xl">Second slide label</h5>
+            <p>Some representative placeholder content for the second slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item relative float-left w-full">
+          <img
+            src="https://mdbootstrap.com/img/Photos/Slides/img%20(23).jpg"
+            class="block w-full rounded-lg"
+            alt="..."
+          />
+          <div class="carousel-caption hidden md:block absolute text-center">
+            <h5 class="text-xl">Third slide label</h5>
+            <p>Some representative placeholder content for the third slide.</p>
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon inline-block bg-no-repeat" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon inline-block bg-no-repeat" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
 
-    <section class="bg-white dark:bg-gray-900">
+    <section class="card bg-gray dark:bg-gray-900">
         <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
-            <div class="hidden lg:mt-0 lg:col-span-5 lg:flex ">
-                <img src="https://i.pravatar.cc/600" class="rounded-lg" height="400" width="450" alt="mockup">
+            <div class=" lg:mt-0 lg:col-span-5 lg:flex ">
+                <img src="/ketum.jpg" class="rounded-xl" height="400" width="450" alt="mockup">
             </div>   
-            <div class="mr-auto place-self-center lg:col-span-7">
-                <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
-                    Payments tool for software companies
+            <div class="mr-auto place-self-center lg:col-span-7 mt-2">
+                <h1 class="max-w-1xl mb-4 text-lg font-extrabold tracking-tight leading-none dark:text-white">
+                    Sambutan Ketua Yayasan
                 </h1>
                 <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
-                    From checkout to global sales tax compliance, companies around the world use Flowbite to simplify their payment stack.
+                    “ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.” (sambutan ketua yayasan amal islami).
                 </p>
 
             </div>             
+        </div>
+    </section>
+
+    <section class="py-6 sm:py-12 dark:bg-gray-800 dark:text-gray-100">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+            <div class="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
+                <h2 class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Berita Terbaru</h2>
+                <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">Lihat berita terbaru dari kami disini.</p>
+            </div> 
+            <div class="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
+                <article class="flex flex-col dark:bg-gray-900 border border-gray-200 shadow-md rounded-xl">
+                    <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum">
+                        <img alt="" class="object-cover w-full h-52 dark:bg-gray-500 rounded-t-xl" src="https://source.unsplash.com/200x200/?fashion?1">
+                    </a>
+                    <div class="flex flex-col flex-1 p-6">
+                        <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum"></a>
+                        <h3 class="flex-1 py-2 text-lg font-semibold leading-snug">Te nulla oportere reprimique his dolorum</h3>
+                        <div class="flex flex-wrap justify-between pt-3 space-x-2 text-xs dark:text-gray-400">
+                            <span>June 1, 2020</span>
+                            <span>2.1K views</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="flex flex-col dark:bg-gray-900 border border-gray-200 shadow-md rounded-xl">
+                    <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum">
+                        <img alt="" class="object-cover w-full h-52 dark:bg-gray-500 rounded-t-xl" src="https://source.unsplash.com/200x200/?fashion?2">
+                    </a>
+                    <div class="flex flex-col flex-1 p-6">
+                        <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum"></a>
+                        <h3 class="flex-1 py-2 text-lg font-semibold leading-snug">Te nulla oportere reprimique his dolorum</h3>
+                        <div class="flex flex-wrap justify-between pt-3 space-x-2 text-xs dark:text-gray-400">
+                            <span>June 2, 2020</span>
+                            <span>2.2K views</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="flex flex-col dark:bg-gray-900 border border-gray-200 shadow-md rounded-xl">
+                    <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum">
+                        <img alt="" class="object-cover w-full h-52 dark:bg-gray-500 rounded-t-xl" src="https://source.unsplash.com/200x200/?fashion?3">
+                    </a>
+                    <div class="flex flex-col flex-1 p-6">
+                        <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum"></a>
+                        <h3 class="flex-1 py-2 text-lg font-semibold leading-snug">Te nulla oportere reprimique his dolorum</h3>
+                        <div class="flex flex-wrap justify-between pt-3 space-x-2 text-xs dark:text-gray-400">
+                            <span>June 3, 2020</span>
+                            <span>2.3K views</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="flex flex-col dark:bg-gray-900 border border-gray-200 shadow-md rounded-xl">
+                    <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum">
+                        <img alt="" class="object-cover w-full h-52 dark:bg-gray-500 rounded-t-xl" src="https://source.unsplash.com/200x200/?fashion?4">
+                    </a>
+                    <div class="flex flex-col flex-1 p-6">
+                        <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum"></a>
+                        <h3 class="flex-1 py-2 text-lg font-semibold leading-snug">Te nulla oportere reprimique his dolorum</h3>
+                        <div class="flex flex-wrap justify-between pt-3 space-x-2 text-xs dark:text-gray-400">
+                            <span>June 4, 2020</span>
+                            <span>2.4K views</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8 mt-8">
+                <a href="#" class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" >Lihat lebih banyak</a>
+            </div> 
         </div>
     </section>
 

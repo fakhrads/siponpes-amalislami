@@ -8,7 +8,52 @@
 @end
 
 @section('content')
-
+<section class="section">
+    <div class="py">
+        <a href="/admin/blog/new" class="btn btn-primary">Tambah Data</a>
+    </div>
+    <br/>
+    <div class="card">
+      <!-- <div class="card-header">Data Guru Yayasan</div> -->
+      <div class="card-body">
+        @if(flashMessages.has('error'))
+          <div class="alert alert-danger">{{ flashMessages.get('error') }}</div>
+        @endif
+        @if(flashMessages.has('success'))
+          <div class="alert alert-success">{{ flashMessages.get('success') }}</div>
+        @endif
+        <table class="table table-striped" id="table1">
+          <thead>
+            <tr>
+              <th>ID </th>
+              <th>Judul</th>
+              <th>Kategori</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            @each(item in data)
+              <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.judul}}</td>
+                <td>{{ item.category_id}}</td>
+                <td>
+                  <a href="/blog/edit/{{ item.id }}" class="badge bg-info">Edit</a>
+                  <br>
+                  <div>                        
+                    <form method="POST" action="{{ route('admin_blog_delete') }}">
+                      <input type="hidden" name="id" value="{{ item.id }}">
+                      <button class="btn btn-sm btn-danger" type="submit">Hapus</button>
+                    </form>
+                  </div>
+                </td>
+              </tr>
+            @end
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
 @end
 
 @section('custom-js')

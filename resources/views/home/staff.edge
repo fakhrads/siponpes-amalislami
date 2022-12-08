@@ -1,0 +1,53 @@
+@layout('home/layout/base')
+
+@set('title','Yayasan Amal Islami')
+
+@section('custom-css')
+
+@end
+
+@section('content')
+<section class="text-gray-600 body-font">
+  <div class="container px-5 py-24 mx-auto">
+    <div class="flex flex-col text-center w-full mb-20">
+      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Tenaga Kerja Yayasan</h1>
+      <p class="lg:w-2/3 mx-auto text-gray-900 leading-relaxed">Data dibawah ini merupakan tenaga kerja kami.</p>
+    </div>
+    <div class="flex flex-wrap -m-2">
+        @each(item in data)
+          
+            <div class="p-2 lg:w-1/4 md:w-1/4 w-full">
+                <div class="card bg-white shadow-2xl border rounded-xl py-5">
+                    <div class="photo-wrapper p-2">
+                        <img class="w-32 h-32 rounded-xl mx-auto" src="/uploads/photo_staff/{{ item.photo_path }}" alt="John Doe">
+                    </div>
+                    <div class="p-2">
+                        <h3 class="text-center text-xl text-gray-900 font-medium leading-8">{{ item.nama_depan}} {{ item.nama_belakang }}</h3>
+                        <div class="text-center text-gray-400 text-xs font-semibold">
+                            <p>{{ item.nama_jabatan }}</p>
+                        </div>
+                        <table class="text-xs my-3">
+                            <tbody>
+                                <tr>
+                                    <td class="px-2 py-2 text-gray-500 font-semibold">Mata Pelajaran</td>
+                                    <td class="px-2 py-2">{{ item.nama_pelajaran }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-2 py-2 text-gray-500 font-semibold">Jeni Kelamin</td>
+                                    <td class="px-2 py-2">{{ item.jenis_kelamin }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+      
+        @end
+    </div>
+  </div>
+</section>
+@end
+
+@section('custom-js')
+
+@end

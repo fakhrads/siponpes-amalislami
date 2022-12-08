@@ -1,5 +1,4 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-import Application from '@ioc:Adonis/Core/Application'
 import Jabatan from 'App/Models/Jabatan'
 import Karyawan from 'App/Models/Karyawan'
 import MataPelajaran from 'App/Models/MataPelajaran'
@@ -33,7 +32,7 @@ export default class StaffController {
     })!
 
     if (photo_path) {
-      await photo_path.move(Application.tmpPath('uploads'))
+      await photo_path.moveToDisk('photo_staff')
     }
 
     try {

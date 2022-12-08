@@ -13,6 +13,10 @@
 
 @section('content')
   <section class="section">
+    <div class="py">
+        <a href="/admin/blog/category/new" class="btn btn-primary">Tambah Data</a>
+    </div>
+    <br/>
     <div class="card">
       <!-- <div class="card-header">Data Guru Yayasan</div> -->
       <div class="card-body">
@@ -25,13 +29,22 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>Kayla Anastasya</td>
-              <td>
-                <span class="badge bg-info">Edit</span>
-              </td>
-            </tr>
+            @each(item in data)
+              <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.category_name}}</td>
+                <td>
+                  <a href="/blog/category/edit/{{ item.id }}" class="badge bg-info">Edit</a>
+                  <br>
+                  <div>                 
+                    <form method="POST" action="{{ route('admin_staff_delete') }}">
+                      <input type="hidden" name="id" value="{{ item.id }}">
+                      <button class="btn btn-sm btn-danger" type="submit">Hapus</button>
+                    </form>
+                  </div>
+                </td>
+              </tr>
+            @end
           </tbody>
         </table>
       </div>

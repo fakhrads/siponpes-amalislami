@@ -26,13 +26,31 @@
             </a>
             <ul class="submenu ">
                 <li 
-                    @if( request.url() == '/admin/teachers') 
+                    @if( request.url() == '/admin/position') 
                         class="submenu-item active">
                     @else 
                         class="submenu-item">
                     @end
                     
-                    <a href="/admin/teachers">Data Guru</a>
+                    <a href="/admin/position">Data Jabatan</a>
+                </li>
+                <li 
+                    @if( request.url() == '/admin/subjects') 
+                        class="submenu-item active">
+                    @else 
+                        class="submenu-item">
+                    @end
+                    
+                    <a href="/admin/subjects">Data Mata Pelajaran</a>
+                </li>
+                <li 
+                    @if( request.url() == '/admin/karyawan') 
+                        class="submenu-item active">
+                    @else 
+                        class="submenu-item">
+                    @end
+                    
+                    <a href="/admin/karyawan">Data Guru</a>
                 </li>
                 <li 
                     @if( request.url() == '/admin/blog/category') 
