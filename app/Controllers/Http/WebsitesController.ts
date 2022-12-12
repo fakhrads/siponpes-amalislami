@@ -30,6 +30,10 @@ export default class WebsitesController {
     return view.render('home/sejarah')
   }
 
+  public async kalender({ view }: HttpContextContract) {
+    return view.render('home/kalender')
+  }
+
   public async staff({ view }: HttpContextContract) {
     const data = await Database
           .from('karyawan')
