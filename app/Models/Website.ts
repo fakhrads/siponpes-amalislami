@@ -6,6 +6,9 @@ export default class Website extends BaseModel {
   public id: number
 
   @column()
+  public judul_website: string
+
+  @column()
   public sejarah: string
 
   @column()
