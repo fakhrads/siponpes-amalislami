@@ -5,6 +5,10 @@ Route
     Route.get('/login', 'UsersController.index').as('admin_login')
     Route.post('/login', 'UsersController.login').as('admin_login_proccess')
     Route.get('/dashboard', 'AdminsController.index').as('admin_dashboard').middleware('auth')
+
+    Route.get('/website', 'AdminsController.editWebsite').as('admin_website').middleware('auth')
+    Route.post('/website/update', 'AdminsController.update').as('admin_website_update').middleware('auth')
+
     Route.get('/achievements', 'AchievementsController.index').as('admin_achievements').middleware('auth')
     
     Route.get('/karyawan', 'StaffController.index').as('admin_staff').middleware('auth')
@@ -45,6 +49,13 @@ Route
     Route.post('/blog/delete', 'BlogsController.destroy').as('admin_blog_delete').middleware('auth')    
     Route.get('/blog/edit/:id', 'BlogsController.edit').as('admin_blog_edit').middleware('auth')    
     Route.post('/blog/edit/update', 'BlogsController.edit').as('admin_blog_update').middleware('auth')    
+
+    Route.get('/gallery', 'GalleriesController.index').as('admin_gallery').middleware('auth')  
+    Route.get('/gallery/new', 'GalleriesController.create').as('admin_gallery_create').middleware('auth')    
+    Route.post('/gallery/new/store', 'GalleriesController.store').as('admin_gallery_store').middleware('auth')    
+    Route.post('/gallery/delete', 'GalleriesController.destroy').as('admin_gallery_delete').middleware('auth')    
+    Route.get('/gallery/edit/:id', 'GalleriesController.edit').as('admin_gallery_edit').middleware('auth')    
+    Route.post('/gallery/edit/update', 'GalleriesController.edit').as('admin_gallery_update').middleware('auth')    
 
   })
   .prefix('/admin')
