@@ -1,21 +1,57 @@
 <div class="sidebar-menu">
     <ul class="menu">
-        <li class="sidebar-title">Menu Admin</li>
+        <li class="sidebar-title">Menu Admin Yayasan</li>
         
         <li
-            @if( request.url() == '/') 
+            @if( request.url() == '/admin/dashboard') 
                 class="sidebar-item active">
             @else 
                 class="sidebar-item">
             @end
-            <a href="/" class='sidebar-link'>
+            <a href="/admin/dashboard" class='sidebar-link'>
                 <i class="bi bi-grid-fill"></i>
                 <span>Dashboard Utama</span>
             </a>
         </li>
         
         <li
-            @if( request.url() == '/shop' || request.url() == '/shop/history') 
+            @if( request.url() == '/admin/website') 
+                class="sidebar-item active">
+            @else 
+                class="sidebar-item">
+            @end
+            <a href="/admin/website" class='sidebar-link'>
+                <i class="bi bi-people-fill"></i>
+                <span>Manajemen Website</span>
+            </a>
+        </li>
+        
+        <li
+            @if( request.url() == '/admin/karyawan') 
+                class="sidebar-item active">
+            @else 
+                class="sidebar-item">
+            @end
+            <a href="/admin/karyawan" class='sidebar-link'>
+                <i class="bi bi-people-fill"></i>
+                <span>Data Tenaga Kerja</span>
+            </a>
+        </li>
+        
+        <li
+            @if( request.url() == '/admin/event') 
+                class="sidebar-item active">
+            @else 
+                class="sidebar-item">
+            @end
+            <a href="/admin/event" class='sidebar-link'>
+                <i class="bi bi-calendar-event"></i>
+                <span>Data Kalender Akademik</span>
+            </a>
+        </li>
+
+        <li
+            @if( request.url() == '/admin/position' || request.url() == '/admin/subjects') 
                 class="sidebar-item has-sub active">
             @else 
                 class="sidebar-item has-sub">
@@ -43,46 +79,34 @@
                     
                     <a href="/admin/subjects">Data Mata Pelajaran</a>
                 </li>
-                <li 
-                    @if( request.url() == '/admin/karyawan') 
-                        class="submenu-item active">
-                    @else 
-                        class="submenu-item">
-                    @end
-                    
-                    <a href="/admin/karyawan">Data Guru</a>
-                </li>
-                <li 
-                    @if( request.url() == '/admin/blog/category') 
-                        class="submenu-item active">
-                    @else 
-                        class="submenu-item">
-                    @end
-                    
-                    <a href="/admin/blog/category">Data Kategori Blog</a>
-                </li>
-                <li 
-                    @if( request.url() == '/admin/blog') 
-                        class="submenu-item active">
-                    @else 
-                        class="submenu-item">
-                    @end
-                    
-                    <a href="/admin/blog">Data Blog</a>
-                </li>
-                <li 
-                    @if( request.url() == '/admin/blog') 
-                        class="submenu-item active">
-                    @else 
-                        class="submenu-item">
-                    @end
-                    
-                    <a href="/admin/blog">Data Siswa Berprestasi</a>
-                </li>
             </ul>
         </li>
-        
+
         <li class="sidebar-title">Menu Karyawan</li>
+
+        <li
+            @if( request.url() == '/admin/gallery') 
+                class="sidebar-item active">
+            @else 
+                class="sidebar-item">
+            @end
+            <a href="/admin/gallery" class='sidebar-link'>
+                <i class="bi bi-image"></i>
+                <span>Manajemen Kalender Akademik</span>
+            </a>
+        </li>
+
+        <li
+            @if( request.url() == '/admin/blog') 
+                class="sidebar-item active">
+            @else 
+                class="sidebar-item">
+            @end
+            <a href="/admin/blog" class='sidebar-link'>
+                <i class="bi bi-newspaper"></i>
+                <span>Manajemen Berita Akademik</span>
+            </a>
+        </li>
 
         <li class="sidebar-item">
             <a href="/logout" class='sidebar-link'>

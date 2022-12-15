@@ -1,7 +1,7 @@
 @layout('layout/base')
 
 @set('title','Amal Islami Dashboard')
-@set('pageHeader','Data Guru Yayasan')
+@set('pageHeader','Data Berita Yayasan')
 
 @section('custom-css')
 
@@ -26,6 +26,7 @@
           <thead>
             <tr>
               <th>ID </th>
+              <th>Thumbnail</th>
               <th>Judul</th>
               <th>Kategori</th>
               <th>Action</th>
@@ -35,6 +36,7 @@
             @each(item in data)
               <tr>
                 <td>{{ item.id }}</td>
+                <td><img height="50" width="50" src="/uploads/photo_blog/{{ item.photo_path }}"></img></td>
                 <td>{{ item.judul}}</td>
                 <td>{{ item.category_id}}</td>
                 <td>
