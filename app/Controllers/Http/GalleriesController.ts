@@ -3,7 +3,8 @@ import Gallery from 'App/Models/Gallery'
 
 export default class GalleriesController {
   public async index({ view }: HttpContextContract) {
-    return view.render('admin/pages/gallery')
+    const data = await Gallery.all()
+    return view.render('admin/pages/gallery', { data: data })
   }
 
   public async create({ view }: HttpContextContract) {
