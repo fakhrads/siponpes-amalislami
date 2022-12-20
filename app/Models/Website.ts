@@ -29,6 +29,9 @@ export default class Website extends BaseModel {
   @column()
   public photo_slide_tiga: string
 
+  @column()
+  public photo_ketua_yayasan: string
+
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime
 

@@ -34,7 +34,7 @@
       <div class="carousel-inner relative w-full overflow-hidden">
         <div class="carousel-item active relative float-left w-full">
           <img
-            src="https://mdbootstrap.com/img/Photos/Slides/img%20(15).jpg"
+            src="/uploads/photo_slide_satu/{{ data.photo_slide_satu }}"
             class="block w-full rounded-lg"
             alt="..."
           />
@@ -45,7 +45,7 @@
         </div>
         <div class="carousel-item relative float-left w-full">
           <img
-            src="https://mdbootstrap.com/img/Photos/Slides/img%20(22).jpg"
+            src="/uploads/photo_slide_dua/{{ data.photo_slide_dua }}"
             class="block w-full rounded-lg"
             alt="..."
           />
@@ -56,7 +56,7 @@
         </div>
         <div class="carousel-item relative float-left w-full">
           <img
-            src="https://mdbootstrap.com/img/Photos/Slides/img%20(23).jpg"
+            src="/uploads/photo_slide_tiga/{{ data.photo_slide_tiga }}"
             class="block w-full rounded-lg"
             alt="..."
           />
@@ -89,7 +89,7 @@
     <section class="card bg-gray dark:bg-gray-900">
         <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
             <div class=" lg:mt-0 lg:col-span-5 lg:flex ">
-                <img src="/ketum.jpg" class="rounded-xl" height="400" width="450" alt="mockup">
+                <img src="/uploads/photo_ketua_yayasan/{{ data.photo_ketua_yayasan }}" class="rounded-xl" height="400" width="450" alt="mockup">
             </div>   
             <div class="mr-auto place-self-center lg:col-span-7 mt-2">
                 <h1 class="max-w-1xl mb-4 text-lg font-extrabold tracking-tight leading-none dark:text-white">
@@ -110,6 +110,7 @@
                 <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">Lihat berita terbaru dari kami disini.</p>
             </div> 
             <div class="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
+              @each(item in data_blog)
                 <article class="flex flex-col dark:bg-gray-900 border border-gray-200 shadow-md rounded-xl">
                     <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum">
                         <img alt="" class="object-cover w-full h-52 dark:bg-gray-500 rounded-t-xl" src="https://source.unsplash.com/200x200/?fashion?1">
@@ -123,45 +124,8 @@
                         </div>
                     </div>
                 </article>
-                <article class="flex flex-col dark:bg-gray-900 border border-gray-200 shadow-md rounded-xl">
-                    <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum">
-                        <img alt="" class="object-cover w-full h-52 dark:bg-gray-500 rounded-t-xl" src="https://source.unsplash.com/200x200/?fashion?2">
-                    </a>
-                    <div class="flex flex-col flex-1 p-6">
-                        <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum"></a>
-                        <h3 class="flex-1 py-2 text-lg font-semibold leading-snug">Te nulla oportere reprimique his dolorum</h3>
-                        <div class="flex flex-wrap justify-between pt-3 space-x-2 text-xs dark:text-gray-400">
-                            <span>June 2, 2020</span>
-                            <span>2.2K views</span>
-                        </div>
-                    </div>
-                </article>
-                <article class="flex flex-col dark:bg-gray-900 border border-gray-200 shadow-md rounded-xl">
-                    <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum">
-                        <img alt="" class="object-cover w-full h-52 dark:bg-gray-500 rounded-t-xl" src="https://source.unsplash.com/200x200/?fashion?3">
-                    </a>
-                    <div class="flex flex-col flex-1 p-6">
-                        <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum"></a>
-                        <h3 class="flex-1 py-2 text-lg font-semibold leading-snug">Te nulla oportere reprimique his dolorum</h3>
-                        <div class="flex flex-wrap justify-between pt-3 space-x-2 text-xs dark:text-gray-400">
-                            <span>June 3, 2020</span>
-                            <span>2.3K views</span>
-                        </div>
-                    </div>
-                </article>
-                <article class="flex flex-col dark:bg-gray-900 border border-gray-200 shadow-md rounded-xl">
-                    <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum">
-                        <img alt="" class="object-cover w-full h-52 dark:bg-gray-500 rounded-t-xl" src="https://source.unsplash.com/200x200/?fashion?4">
-                    </a>
-                    <div class="flex flex-col flex-1 p-6">
-                        <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum"></a>
-                        <h3 class="flex-1 py-2 text-lg font-semibold leading-snug">Te nulla oportere reprimique his dolorum</h3>
-                        <div class="flex flex-wrap justify-between pt-3 space-x-2 text-xs dark:text-gray-400">
-                            <span>June 4, 2020</span>
-                            <span>2.4K views</span>
-                        </div>
-                    </div>
-                </article>
+              @end
+                
             </div>
             
             <div class="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8 mt-8">

@@ -76,8 +76,31 @@ export default class StaffController {
     const nama_depan = request.input('nama_depan')
     const nama_belakang = request.input('nama_belakang')
     const jenis_kelamin = request.input('jenis_kelamin')
+    const photo_path = request.file('gambar', {
+      size: '2mb',
+      extnames: ['jpg', 'png', 'gif'],
+    })!
+
 
     try {
+      
+
+    if (photo_path) {
+      await photo_path.moveToDisk('photo_staff')
+      const karyawan = await Karyawan.findOrFail(id)
+
+      karyawan.jabatan_id = id_jabatan
+      karyawan.mata_pelajaran_id = id_matapelajaran
+      karyawan.nama_depan = nama_depan
+      karyawan.nama_belakang = nama_belakang
+      karyawan.jenis_kelamin = jenis_kelamin
+      karyawan.photo_path = photo_path.fileName!
+
+      await karyawan.save()
+
+      session.flash('success', "Data berhasil diubah")
+      return response.redirect().back()
+    } else {
       const karyawan = await Karyawan.findOrFail(id)
 
       karyawan.jabatan_id = id_jabatan
@@ -90,6 +113,8 @@ export default class StaffController {
 
       session.flash('success', "Data berhasil diubah")
       return response.redirect().back()
+    }
+      
     } catch(e) {
       session.flash('errors', "Data tidak berhasil diubah")
       return response.redirect().back()
