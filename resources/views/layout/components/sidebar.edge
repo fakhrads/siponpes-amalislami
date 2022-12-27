@@ -82,7 +82,7 @@
             </ul>
         </li>
 
-        <li class="sidebar-title">Menu Karyawan</li>
+        <li class="sidebar-title">Menu Karyawan (Admin) </li>
 
         <li
             @if( request.url() == '/admin/gallery') 
@@ -97,15 +97,47 @@
         </li>
 
         <li
-            @if( request.url() == '/admin/blog') 
+            @if( request.url() == '/admin/prestasi') 
                 class="sidebar-item active">
             @else 
                 class="sidebar-item">
             @end
-            <a href="/admin/blog" class='sidebar-link'>
-                <i class="bi bi-newspaper"></i>
-                <span>Manajemen Berita Akademik</span>
+            <a href="/admin/prestasi" class='sidebar-link'>
+                <i class="bi bi-people-fill"></i>
+                <span>Data Prestasi</span>
             </a>
+        </li>
+
+        <li
+            @if( request.url() == '/admin/blog/' || request.url() == '/admin/blog/cateogry') 
+                class="sidebar-item has-sub active">
+            @else 
+                class="sidebar-item has-sub">
+            @end
+            <a href="#" class='sidebar-link'>
+                <i class="bi bi-stack"></i>
+                <span>Blog/Berita Akademik</span>
+            </a>
+            <ul class="submenu ">
+                <li 
+                    @if( request.url() == '/admin/blog') 
+                        class="submenu-item active">
+                    @else 
+                        class="submenu-item">
+                    @end
+                    
+                    <a href="/admin/blog">Manajemen Berita/Blog</a>
+                </li>
+                <li 
+                    @if( request.url() == '/admin/blog/category') 
+                        class="submenu-item active">
+                    @else 
+                        class="submenu-item">
+                    @end
+                    
+                    <a href="/admin/blog/category">Data Kategori Berita/Blog</a>
+                </li>
+            </ul>
         </li>
 
         <li class="sidebar-item">
