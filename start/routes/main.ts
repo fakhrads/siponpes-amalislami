@@ -9,8 +9,11 @@ Route
     Route.get('/website', 'AdminsController.editWebsite').as('admin_website').middleware('auth')
     Route.post('/website/update', 'AdminsController.update').as('admin_website_update').middleware('auth')
 
-    Route.get('/achievements', 'AchievementsController.index').as('admin_achievements').middleware('auth')
-    
+    Route.get('/prestasi', 'AchievementsController.index').as('admin_achievements').middleware('auth')
+    Route.get('/prestasi/new', 'AchievementsController.create').as('admin_achievements_new').middleware('auth')
+    Route.post('/prestasi/new', 'AchievementsController.store').as('admin_achievements_store').middleware('auth')
+    Route.post('/prestasi/destroy', 'AchievementsController.destroy').as('admin_achievements_destroy').middleware('auth')
+
     Route.get('/karyawan', 'StaffController.index').as('admin_staff').middleware('auth')
     Route.get('/karyawan/new', 'StaffController.create').as('admin_staff_new').middleware('auth')
     Route.post('/karyawan/store', 'StaffController.store').as('admin_staff_store').middleware('auth')
