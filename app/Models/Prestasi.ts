@@ -6,10 +6,13 @@ export default class Prestasi extends BaseModel {
   public id: number
 
   @column()
-  public judul: string
+  public users_id: number
 
   @column()
-  public deskripsi: string
+  public title: string
+
+  @column()
+  public description: string
 
   @column()
   public photo_path: string

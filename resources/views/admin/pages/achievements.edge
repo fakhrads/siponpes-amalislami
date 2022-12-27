@@ -27,17 +27,30 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>11712305798</td>
-              <td>
-                <img class="rounded" style="width: 150px; height: 150px;" src="/asset/images/samples/dumb_photo.jpg">
-              </td>
-              <td>Kayla Anastasya</td>
-              <td>Jakarta, 32 Maret 2001</td>
-              <td>
-                <span class="badge bg-success">Active</span>
-              </td>
-            </tr>
+            @each(item in data)
+              <tr>
+                <td>{{ item.id }}</td>
+                <td>
+                  <img class="rounded" style="width: 150px; height: 150px;" src="/uploads/photo_prestasi/{{ item.photo_path }}">
+                </td>
+                <td>{{ item.title }}</td>
+                <td>{{ item.description }}</td>
+                <td>
+                  <div class="row">
+                    <div>                 
+                      <a href="/admin/prestasi/edit/{{ item.id }}"class="btn btn-sm btn-info">Edit</a>
+                    </div>
+                    <br>
+                    <div>                 
+                      <form method="POST" action="admin_achievements_destroy">
+                        <input type="hidden" name="id" value="{{ item.id }}">
+                        <button class="btn btn-sm btn-danger" type="submit">Hapus</button>
+                      </form>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            @end
           </tbody>
         </table>
       </div>
